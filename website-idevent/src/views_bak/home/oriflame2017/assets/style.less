@@ -1,0 +1,90 @@
+@ori-fontBase: #333333;
+@ori-fontGrey: #999999;
+@ori-deepGrey: #2a2a2a;
+@ori-green: #80A700;
+@ori-greenDeep: #7f9917;
+@ori-greenLight: #fcffef;
+@ori-blue: #0096E3;
+.mt-container {
+    min-height: 100vh;
+    background: #f3f3f3;
+    padding-bottom: 20px;
+    &.lg {
+        .sub-title {
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+    }
+}
+.block {
+    padding: 20px;
+    background: #ffffff;
+    margin-bottom: 10px;
+    .title {
+        color: #333;
+        font-size: 17px;
+        position: relative;
+        text-indent: 14px;
+        line-height: 1;
+        margin-bottom: 15px;
+        font-weight: bold;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 6px solid @ori-green;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .sub-title {
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 20px 0 10px 0;
+        line-height: 1;
+    }
+    .content {
+        line-height: 150%;
+        color:#333;
+    }
+    p {
+        font-size: 14px;
+        margin: 0 0 1.5em;
+        color: #333;
+        line-height: 150%;
+        a {
+            color: @ori-green;
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+    table {
+        margin: 10px 0;
+        width: 100%;
+        border: 1px solid #333;
+        th {
+            text-align:center;
+        }
+        td {
+            border: 1px solid #333;
+            padding: 10px;
+            min-width: 60px;
+        }
+        .t {
+            td {
+                text-align: center;
+            }
+        }
+        .v {
+            text-align: center;
+        }
+    }
+}

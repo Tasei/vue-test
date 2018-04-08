@@ -1,0 +1,103 @@
+.home-hotel {
+    .no-hotel {
+        .fa-5 {
+            font-size: 5em;
+        }
+        p{
+            margin-top: 20px;
+        }
+        text-align: center;
+        margin: 80px 20px 0;
+    }
+
+    table.table-detail {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 14px;
+        td {
+            border-bottom: 0 none;
+            padding: 5px 0 !important;
+            &:first-child {
+                color: #777;
+                width: 150px;
+            }
+        }
+    }
+
+    background: #f3f3f3;
+
+    .hotel-banner {
+        min-height: 150px;
+    }
+
+    .hotel-contact {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        li {
+            margin: 0;
+            border: 0 none;
+            padding: 15px 0 15px 15px;
+            line-height: 20px;
+            vertical-align: middle;
+            a {
+                display: block;
+                color: #333;
+                font-size: 14px;
+                .fa {
+                    font-size: 14px;
+                    color: rgba(0, 84, 156, .5);
+                    padding-right: 6px;
+                }
+                .arrow-right {
+                    float: right;
+                    padding-right: 15px;
+                    color: #ccc;
+                    font-size: 18px;
+                }
+
+            }
+        }
+        .hotel-name {
+            color: #333;
+            font-size: 22px;
+            span {
+                font-size: 16px;
+            }
+        }
+        li:first-child {
+            padding: 19px 0 19px 15px;
+        }
+        li:after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            bottom: 0;
+            right: 0;
+            top: auto;
+            height: 1px;
+            width: 100%;
+            background-color: #ddd;
+            display: block;
+            z-index: 15;
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%
+        }
+    }
+
+    p {
+        color: rgba(102, 102, 102, 0.98);
+        line-height: 20px;
+        font-size: 14px;
+        //padding-bottom: 10px;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    li:after {
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5)
+    }
+}

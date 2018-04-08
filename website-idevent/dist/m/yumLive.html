@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>百胜中国Founders' Day直播</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="http://static.idevent.cn/oss/yumchinaFoundersDay/pc/jquery-3.2.1.min.js"></script>
+</head>
+<style>
+    body {
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: url('http://static.idevent.cn/oss/yumchinaFoundersDay/pc/pc_live_bg.png') no-repeat center top;
+        background-size: cover;
+        background-color: #6f1210;
+    }
+
+    .video-wrapper {
+        position: absolute;
+        top: 27%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 640px;
+        height: auto;
+        box-shadow: 0 0 20px #fff;
+    }
+
+    iframe {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 360px;
+        background-color: #000;
+        border: 0 none;
+    }
+
+    .content {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #fff;
+        width: 100%;
+        margin-top: -5px;
+    }
+
+    .content p {
+        position: relative;
+        padding: 10px;
+        margin: 0;
+        color: #666;
+    }
+
+    img {
+        position: absolute;
+        bottom: 5px;
+        right: -100px;
+        width: 100px;
+    }
+
+    .mb {
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        display: inline-block;
+        font-size: 12px;
+        color: #999;
+    }
+
+    #login-box {
+        padding: 30px;
+        border-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background: rgba(0, 0, 0, .3);
+    }
+
+    #login-box h2{
+        font-size: 36px;
+        color: #ddd;
+        margin: 100px auto;
+        text-align: center;
+    }
+
+    #login-box input,
+    #login-box button {
+        box-sizing: border-box;
+        width: 250px;
+        margin: 20px auto;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 0 none;
+        outline: 0 none;
+        opacity: .9;
+    }
+
+    #login-box button {
+        padding: 6px;
+        margin: 30px auto;
+        background: #e7322a;
+        color: #fff;
+    }
+
+    #login-box button:active {
+        opacity: .7;
+    }
+</style>
+
+<body>
+<div class="video-wrapper">
+    <div id="login-box">
+        <h2>直播已结束，感谢观看</h2>
+    </div>
+    <!--<form id="login-box" type="post">-->
+        <!--<input placeholder="请输入员工工号" id="login-code"/>-->
+        <!--<input placeholder="请输入您的姓名" id="login-name"/>-->
+        <!--<button type="submit" id="login-btn">登录</button>-->
+    <!--</form>-->
+    <div id="player-box" style="display:none;">
+        <iframe id="player-iframe" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true"
+                mozallowfullscreen="true" oallowfullscreen="true"
+                msallowfullscreen="true" src=""></iframe>
+    </div>
+    <div class="content">
+        <p>百胜中国 Founders' Day直播</p>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        if (window.location.protocol.toLowerCase() === 'https:') {
+            window.location.href = window.location.href.replace("https:", "http:");
+            return;
+        }
+
+        var $btn = $("#login-btn")
+
+        $("#login-box").submit(function () {
+            var code = $("#login-code").val()
+            var name = $("#login-name").val()
+            if (!code || !name) {
+                alert('请填写您的工号和姓名');
+                return false;
+            }
+
+            btnEnable(false)
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/meeting/loginByCode',
+                data: {
+                    meeting_id: 120,
+                    code: code
+                },
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    if (data.err === 0) {
+                        $btn.html("登录成功")
+                        saveName()
+                        getPlayerUrl()
+                    } else {
+                        alert('登录失败, 错误的工号或姓名')
+                    }
+                },
+                complete: function () {
+                    btnEnable(true)
+                }
+            });
+
+            return false;
+        });
+
+        function saveName() {
+            $.ajax({
+                url: '/api/invitation/code/updateCodeInfo',
+                data: {
+                    name: $('#login-name').val()
+                }
+            })
+        }
+
+        function btnEnable(enable) {
+            if (enable) {
+                $btn.attr('disabled', false)
+                $btn.html("登录")
+            } else {
+                $btn.attr('disabled', true)
+                $btn.html("登录中...")
+            }
+        }
+
+        function getPlayerUrl() {
+            $.ajax({
+                type: 'POST',
+                url: '/api/custom/yum2017/getConfig',
+                dataType: 'json',
+                success: function (data, textStatus, jqXHR) {
+                    if (data.err === 0) {
+                        $("#player-iframe").attr('src', data.res.liveStreamUrlPC)
+                        $('#login-box').hide()
+                        $('#player-box').show()
+                    } else {
+                        alert('请求失败, 请稍后重试')
+                    }
+                }
+            });
+        }
+
+    })
+</script>
+
+</html>

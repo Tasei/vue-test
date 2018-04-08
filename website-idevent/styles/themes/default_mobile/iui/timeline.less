@@ -1,0 +1,156 @@
+.iui-timeline {
+    @left-offset: 120px;
+
+    .col-xs-4, .col-xs-8 {
+        padding: 0;
+    }
+
+    .left {
+        width: @left-offset;
+        float: left;
+    }
+
+    .right {
+        margin-left: @left-offset;
+    }
+    .step-title {
+        font-family: PingFang-SC-Medium;
+        padding-bottom: 20px;
+        position: relative;
+
+        .left {
+            height: 19px;
+            line-height: 19px;
+            text-align: right;
+            padding-right: 27px;
+            position: relative;
+            &:before {
+                content: '';
+                width: 10px;
+                height: 10px;
+                opacity: 0.6;
+                position: absolute;
+                display: block;
+                border-radius: 50%;
+                right: 4px;
+                top: 50%;
+                margin-top: -5px;
+            }
+
+            .radius {
+                width: 18px;
+                height: 18px;
+                opacity: 0.15;
+                position: absolute;
+                display: block;
+                border-radius: 50%;
+                right: 0;
+                top: 50%;
+                margin-top: -9px;
+            }
+            span.text {
+                font-family: PingFang-SC-Medium;
+                display: inline-block;
+                padding: 0 5px;
+                border-radius: 1px;
+                position: relative;
+                background: @brand-primary;
+                //color: #000;
+                &:before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-top: 3px solid transparent;
+                    border-left: 6px solid @brand-primary;
+                    border-bottom: 3px solid transparent;
+                    position: absolute;
+                    right: -6px;
+                    top: 50%;
+                    margin-top: -4px;
+                }
+            }
+        }
+        .right {
+            font-size: 15px;
+            line-height: 19px;
+            padding-left: 15px;
+            color: #000;
+        }
+    }
+
+    .step-content {
+        .item {
+            padding-bottom: 15px;
+            position: relative;
+        }
+        .left {
+            height: 15px;
+            line-height: 15px;
+            text-align: right;
+            padding-right: 27px;
+            position: relative;
+            &:before {
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: @brand-primary;
+                opacity: 0.4;
+                position: absolute;
+                display: block;
+                border-radius: 50%;
+                right: 5px;
+                top: 50%;
+                margin-top: -4px;
+            }
+            span.text {
+                display: inline-block;
+            }
+        }
+        .right {
+            font-size: 13px;
+            padding-left: 15px;
+            p {
+                margin-bottom: 5px;
+                line-height: 1;
+                color: #666;
+            }
+            p.title {
+                font-size: 15px;
+                color: #000;
+            }
+            .child-item {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .item, .step-title {
+        &:after {
+            content: '';
+            width: 4px;
+            background: @brand-primary;
+            opacity: 0.1;
+            position: absolute;
+            display: block;
+            left: calc(@left-offset - 11px);
+            height: 100%;
+            top: 0;
+        }
+    }
+    .step {
+        &:first-child {
+            .step-title:after {
+                top: 7px
+            }
+        }
+        &:last-child {
+            .step-content {
+                .item:last-child:after {
+                    top: 0;
+                    height: 8px;
+                }
+            }
+        }
+    }
+
+}

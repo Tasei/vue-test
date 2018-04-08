@@ -1,0 +1,68 @@
+.home-flight {
+    color: #333;
+    margin-bottom: 15px;
+
+    .flight-title {
+        margin: 15px auto;
+        font-size: 15px;
+
+        .label.label-primary {
+            color: #333;
+            border-radius: 2px;
+            margin-right: 10px;
+        }
+    }
+
+    .flight-panel {
+        background: #fff;
+        border: 1px solid #f3f3f3;
+        position: relative;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom: 0 none;
+    }
+
+    .route-arrow {
+        width: 50px;
+        margin-left: -25px;
+        height: 30px;
+        border-bottom: 2px solid #ddd;
+        border-right: 2px solid #ddd;
+        transform-origin: bottom;
+        transform: perspective(30px) rotateX(45deg);
+        position: absolute;
+        top: 15px;
+        left: 50%;
+    }
+
+    .route {
+        width: 49%;
+        padding: 25px 0;
+        display: inline-block;
+        overflow: hidden;
+
+        .time {
+            font-size: 32px;
+            line-height: 32px;
+            text-align: center;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .airport {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            display: block;
+        }
+    }
+
+    .airline {
+        background: #ddd;
+        padding: 10px 15px;
+        font-size: 13px;
+        line-height: 13px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}

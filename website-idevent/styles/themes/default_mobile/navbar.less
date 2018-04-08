@@ -1,0 +1,27 @@
+.mint-tab-item {
+    padding: 14px 0;
+    margin-bottom: 0;
+    border: 0!important;
+    .mint-tab-item-label {
+        color: #333;
+        font-weight: bold;
+        position: relative;
+    }
+    &.is-selected{
+        .mint-tab-item-label {
+            color: @brand-primary;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 16px;
+                height: 2px;
+                background-color: @brand-primary;
+                left: 50%;
+                bottom: -4px;
+                margin-left: -8px;
+                border-radius: 100px;
+
+            }
+        }
+    }
+}

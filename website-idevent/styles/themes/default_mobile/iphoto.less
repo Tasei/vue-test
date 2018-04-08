@@ -1,0 +1,284 @@
+.iphoto-tab {
+    background-color: #fff;
+    span {
+        border-width: 0 0 3px 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+    .active {
+        span {
+            border-color: transparent;//@brand-primary;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+}
+
+img[lazy=loaded],.swiper-lazy-loaded {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+img[lazy=loading] {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+div[lazy=loading] {
+    background-size: 40px 40px!important;
+}
+
+img[lazy=error] {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.mt-popup-image {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    .mt-container {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        .icon-close {
+            position: absolute;
+            z-index: 100;
+            width: 24px;
+            height: 24px;
+            color: #999;
+            font-size: 24px;
+            line-height: 1;
+            right: 25px;
+            top: 25px;
+        }
+
+        .not {
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+            color: #999;
+            line-height: 1;
+            right: 20px;
+            top: 30px;
+            height: 34px;
+        }
+        .zan {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+            bottom: 36px;
+            .icon {
+                font-size: 30px;
+                line-height: 1;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                &.icon-like {
+                    color: #fff;
+                }
+                &.icon-like1 {
+                    color: #ff7200;
+                }
+
+
+            }
+
+            > span {
+                display: block;
+                margin-top: 10px;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 14px;
+                line-height: 14px;
+            }
+        }
+    }
+
+    .spinner-loading {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        left: 50%;
+        margin-left: -17.9px;
+        z-index: 1;
+    }
+
+    #imgBox {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+
+
+#imgBox {
+    img[lazy=loaded],.swiper-lazy-loaded {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.iphoto-bar {
+    .iuifont {
+        color: rgba(255, 255, 255, 1);
+        font-size: 24px;
+    }
+    .mint-tab-item {
+        padding: 6px 0 4px 0;
+        &.is-selected {
+            background-color: transparent;
+            .iuifont, .mint-tab-item-label {
+                color: #fff!important;
+            }
+            .mint-tab-item-label {
+                font-weight: bold;
+            }
+        }
+    }
+    .mint-tab-item-label {
+        color: rgba(255, 255, 255, 1);
+        font-size: 10px!important;
+        font-weight: normal;
+        &:before {
+            height: 0!important;
+        }
+    }
+    .mint-tabbar {
+        background-color: @brand-primary;
+        opacity: 0.94;
+        background-image: none;
+    }
+}
+
+.iphoto-no-result {
+    padding-top: 20px;
+    .icon-holder {
+        width: 44%;
+        margin: 0px auto;
+        padding-top: 32%;
+        background: url("../../../src/assets/images/iphoto/no_result.png") no-repeat center;
+        background-size: 140.5px 93.5px
+    }
+    .icon-holder-new {
+        width: 63.87%;
+        margin: 0 auto;
+        padding-top: 39.2%;
+        background: url("../../../src/assets/images/iphoto/photo.png") no-repeat center;
+        background-size: 239.5px 147px;
+    }
+    .icon-holder-loading {
+        width: 44%;
+        margin: 0px auto;
+        padding-top: 32%;
+        background: url("../../../src/assets/images/iphoto/loading.gif") no-repeat center;
+        background-size: 165px 120px;
+    }
+    p {
+        margin-top: 5px;
+        line-height: 1.3;
+    }
+}
+
+.iphoto-navbar {
+    .mint-tab-item-label {
+        font-weight: normal;
+        font-size: 15px;
+        color: #666;
+    }
+    .mint-tab-item {
+        &.is-selected {
+            margin-bottom: 0;
+            .mint-tab-item-label {
+                color: #333;
+                &:before {
+                    width: 24%;
+                    margin-left: -12%;
+                    bottom: -14px;
+                }
+            }
+        }
+    }
+}
+
+.btn-iphoto {
+    width: 44%!important;
+    .camera {
+        display: inline-block;
+        background: url("../../../src/assets/images/iphoto/camera.png") no-repeat left center;
+        background-size: 17px 15px;
+        height: 17px;
+        text-indent: 25px;
+        line-height: 1.2;
+    }
+}
+.tab-animation-bar {
+    width: 30px;
+    height: 3px;
+    background: @brand-primary;
+    position: absolute;
+    bottom: 0;
+    &.left {
+        margin-right: 48px;
+        right: 50%;
+        &.tab-animation {
+            animation: tab-animation-right 0.5s;
+        }
+    }
+    &.right {
+        margin-left: 48px;
+        left: 50%;
+        &.tab-animation {
+            animation: tab-animation-left 0.5s;
+        }
+    }
+}
+
+@keyframes tab-animation-left {
+    from {
+        width: 30px;
+        margin-left: -78px;
+    }
+    50% {
+        width: 156px;
+        margin-left: -78px;
+    }
+    to {
+        width: 30px;
+        margin-left: 48px;
+    }
+}
+@keyframes tab-animation-right {
+    from {
+        width: 30px;
+        margin-right: -78px;
+    }
+    50% {
+        width: 156px;
+        margin-right: -78px;
+    }
+    to {
+        width: 30px;
+    }
+
+}

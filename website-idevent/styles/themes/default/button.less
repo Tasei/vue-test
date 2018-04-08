@@ -1,0 +1,73 @@
+.btn {
+    border-color: transparent;
+    outline: none!important;
+    &.btn-lg {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &.padding-lg {
+        padding: 10px 49px;
+    }
+}
+
+.btn-outline {
+    background: transparent;
+    transition: all .5s;
+    color: inherit;
+    border-width: 1px;
+    &:hover, &:focus {
+        color: #fff!important;
+    }
+}
+
+.btn-white {
+    background: #fff!important;
+    color: inherit;
+}
+.btn-primary.btn-outline {
+    color: @btn-primary-bg;
+    border-color: @btn-primary-bg;
+    &:hover, &:active, &:focus {
+        background-color: fade(@brand-primary, 5%);
+        color: @brand-primary!important;
+        border-color: @btn-primary-bg;
+    }
+}
+
+.btn-default.btn-outline {
+    color: @btn-default-color;
+    border-color: @btn-default-border;
+    &:hover, &:active, &:focus {
+        background-color: fade(@btn-default-color, 5%);
+        color: @btn-default-color!important;
+        border-color: @btn-default-border;
+    }
+}
+
+.btn-success.btn-outline {
+    color: @btn-success-border;
+}
+.btn-danger.btn-outline {
+    color: @btn-danger-border;
+}
+.btn-warning.btn-outline {
+    color: @btn-warning-border;
+}
+.btn-info.btn-outline {
+    color: @btn-info-border;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    padding: 6px 9px;
+    &.btn-lg {
+        padding: 10px 13px;
+    }
+    &.btn-sm {
+        padding: 5px 8px;
+    }
+    &.btn-xs {
+        padding: 1px 4px;
+    }
+}

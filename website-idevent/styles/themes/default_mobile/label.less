@@ -1,0 +1,34 @@
+span.label-shareable{
+	color: #ff7200;
+	border:1px solid #ff7200;
+	border-radius:2px;
+	padding: 1px 2px;
+	padding: 1px 2.5px;
+	font-size: 10px;
+	line-height: 10px;
+	font-weight: @font-weight-bold;
+}
+
+span.label-price{
+	font-weight: normal;
+	color: #ff7200;
+	text-align: right;
+	vertical-align: baseline;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 0;
+	&.label-price-lg{
+		font-size: 20px;
+		line-height: 20px;
+		font-weight: @font-weight-bold;
+	}
+
+	&:before{
+		content: "¥";
+		font-size: 14px;
+		margin-right: 2px;
+	}
+    small {
+        color: #999;
+    }
+}

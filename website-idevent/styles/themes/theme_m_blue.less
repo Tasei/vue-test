@@ -1,0 +1,35 @@
+// Core variables and mixins
+@import "../bootstrap/variables.less";
+@import "../bootstrap/mixins.less";
+
+// Reset and dependencies
+@import "../bootstrap/normalize.less";
+
+.theme-blue {
+	@import "./bootstrap.less";
+	@import "./default_mobile/index";
+	/**
+	  全局配色方案
+	*/
+	@global-primary: #00549c;
+	@global-gray: #999; //字体默认颜色
+
+	@brand-primary:         #00549c;
+	@brand-success:         #00cf9d;
+	@brand-info:            #539be5;
+	@brand-warning:         #ff7200;
+	@brand-danger:          #ff0000;
+
+	//border-radius
+	@border-radius-base:        0px;
+	@border-radius-large:       0px;
+	@border-radius-small:       0px;
+
+	@input-border-focus: @brand-primary;
+	@state-warning-text: @brand-warning;
+
+	@line-height-large: 1.3;
+
+	@font-weight-bold: 400;
+	@grid-gutter-width:         40px;
+}

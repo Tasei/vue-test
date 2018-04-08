@@ -1,0 +1,50 @@
+.home-hotel-list {
+    @size: 62px;
+    ul.list {
+        padding: 0;
+        li {
+            position: relative;
+            border-bottom: 1px solid #dddddd;
+            min-height: @size;
+            padding: 20px;
+            > a {
+                display: block;
+                color: #666;
+            }
+        }
+        .img {
+            width: @size;
+            height: @size;
+            background-color: #d8d8d8;
+            float: left;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .content {
+            margin-left: @size + 10px;
+            min-height: @size;
+            h3 {
+                font-size: 17px;
+                margin: 0 0 8px;
+                line-height: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p {
+                font-size: 13px;
+                margin: 0;
+            }
+
+            .hotel-stars {
+                color: #fbbf3f;
+                margin-bottom: 5px;
+                min-height: 16px;
+                span {
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+}

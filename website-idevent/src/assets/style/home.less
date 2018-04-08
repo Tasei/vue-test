@@ -1,0 +1,125 @@
+.fd-index {
+    // background-color: #0e1b23;
+    background-color: #ddd;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .index-list {
+        margin: 5px 5px 0 5px;
+        background: #fff;
+        border-radius: 4px;
+        margin-bottom: 55px;
+        li {
+            padding: 12px 10px 12px 64px;
+            border: 0;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center ;
+            background-size: 26px 21px;
+            h5 {
+                color: #333;
+                font-size: 17px;
+                line-height: 17px;
+                font-weight: bold;
+                margin: 0;
+                margin-bottom: 7px;
+            }
+            p {
+                margin: 0;
+            }
+            .list-details {
+                color: #999;
+                font-size: 12px;
+                line-height: 12px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 62px;
+                bottom: 0;
+                right: 0;
+                top: auto;
+                height: 1px;
+                width: 100%;
+                background-color: #ddd;
+                display: block;
+                z-index: 0;
+                -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%
+            }
+
+            &:first-child {
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
+            }
+            &:last-child {
+                border-bottom-left-radius: 2px;
+                border-bottom-right-radius: 2px;
+                &:after {
+                    height: 0!important;
+                }
+            }
+
+            .index-icon {
+                position: absolute;
+                display: inline-block;
+                left: 20px;
+                width: 27px;
+                height: 27px;
+                top: 12px;
+                background-size: 100% auto;
+
+                &.index-icon-register{
+                    background-image: url('../images/mobile/home/menu/register.png');
+                }
+                &.index-icon-user{
+                    background-image: url('../images/mobile/home/menu/user.png');
+                }
+                &.index-icon-interact{
+                    background-image: url('../images/mobile/home/menu/interact.png');
+                }
+                &.index-icon-hotel{
+                    background-image: url('../images/mobile/home/menu/hotel.png');
+                }
+                &.index-icon-iphoto{
+                    background-image: url('../images/mobile/home/menu/iphoto.png');
+                }
+                &.index-icon-calendar{
+                    background-image: url('../images/mobile/home/menu/calendar.png');
+                }
+                &.index-icon-question{
+                    background-image: url('../images/mobile/home/menu/question.png');
+                }
+                &.index-icon-contact{
+                    background-image: url('../images/mobile/home/menu/contact.png');
+                }
+                &.index-icon-venue{
+                    background-image: url('../images/mobile/home/menu/venue.png');
+                }
+                &.index-icon-reception{
+                    background-image: url('../images/mobile/home/menu/shuttle.png');
+                }
+                &.index-icon-repast{
+                    background-image: url('../images/mobile/home/menu/repast.png');
+                }
+                &.index-icon-seat{
+                    background-image: url('../images/mobile/home/menu/seat.png');
+                }
+            }
+
+        }
+    }
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    li:after {
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5)
+    }
+}

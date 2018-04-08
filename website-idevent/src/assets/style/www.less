@@ -1,0 +1,73 @@
+//默认主题
+@import "../../../styles/themes/default/index";
+@import "iconfont";
+
+/**两栏布局开始*/
+body, html {
+    position: relative;
+  width: 100%;
+  height: 100%;
+}
+body {
+    position: relative;
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+    font-family: "-apple-system",BlinkMacSystemFont,Roboto,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Source Han Sans","Noto Sans CJK Sc","Microsoft YaHei",sans-serif;
+}
+#wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#page-wrapper {
+    min-height: calc(100vh);
+    //margin: 0 0 0 220px;
+    margin: 0 auto;
+}
+
+.navbar-static-side {
+    z-index: 200;
+    position: absolute;
+    left: 0;
+    width: 220px;
+    background-color: #333;
+    &:before {
+        content: '';
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        background-color: #333;
+        width: 220px;
+        z-index: -1;
+    }
+}
+
+.navbar-static-top {
+    border-bottom: 1px solid @legend-border-color;
+    margin-bottom: 20px;
+    z-index: 0;
+}
+/**布局结束*/
+
+.dropdown-icon {
+    background: url("../images/dropdown@2x.png") no-repeat center;
+    width: 22px;
+    height: 14px;
+    background-size: 11px 7px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+.register-btn{
+    margin: 3rem auto;
+    .btn {
+        margin-right: 2rem;
+    }
+}

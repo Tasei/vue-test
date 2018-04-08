@@ -1,0 +1,117 @@
+
+
+.holder {
+    width: 100%;
+    padding-top: 61.33%;
+}
+.login-box {
+    max-width: 750px;
+    margin: 0 auto;
+    .bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: top;
+        z-index: -1;
+    }
+}
+.login-box-pc {
+    max-width: 100%;
+    position: relative;
+    .holder {
+        display: none;
+    }
+    .bg {
+        background-size: cover;
+    }
+    .m-login-page {
+        position: absolute;
+        left: 0;
+        right: 0;
+        max-width: 375px;
+        margin: 0 auto;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        h3 {
+            display: block;
+        }
+    }
+
+}
+.m-login-page {
+    .m-login-name {
+        font-family: PingFang-SC-Medium;
+        font-weight: bold;
+        margin-top: 10px;
+        text-align: center;
+        line-height: 26px;
+        font-size: 26px;
+    }
+    h3 {
+        display: none;
+    }
+    .m-login-time {
+        margin-top: 15px;
+        color: #777;
+        line-height: 14px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .m-login-form {
+        //padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .m-login-code {
+        font-family: PingFang-SC-Medium;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 2px;
+        border: 1px solid rgba(48, 47, 44, 0.10);
+        text-align: center;
+        font-size: 15px;
+        height: 46px;
+        padding: 10px 0;
+        color: #999;
+        &::-webkit-input-placeholder {
+            color: #999;
+            font-family: PingFangSC-Regular;
+            font-weight: normal;
+            opacity: 0.6;
+        }
+    }
+
+    .m-login-copyright {
+        font-size: 10px;
+        line-height: 10px;
+        text-align: center;
+        opacity: 0.8;
+        color: #999;
+    }
+    .m-login-btn {
+        margin-bottom: 20px;
+    }
+
+    .m-login-help {
+        color: rgba(255, 255, 255, 0.5);
+        h5 {
+            font-size: 12px;
+            font-family: PingFangTC-Medium;
+            line-height: 12px;
+            margin-bottom: 7px;
+        }
+        p {
+            font-size: 12px;
+            line-height: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 7px;
+        }
+    }
+}
